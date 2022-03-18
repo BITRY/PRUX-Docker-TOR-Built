@@ -1,13 +1,15 @@
 FIRST TIME BUILD
 
-NEED before runnning docker on your os. 
+NEED running docker daemon on your os!  
 Attention the PRUX blockchanin need actaully after fullsync 17GB ! 
 
-BUILD DOCKER WITH follow commands 
-
-docker build -f Dockerfile.dev -t prux.dev . && docker build -f Dockerfile.built -t prux-build . && docker build -f Dockerfile.install -t prux-bin . && docker build -f Dockerfile.run -t prux-run .
+BUILD DOCKER WITH follow commands :
+1)   docker build -f Dockerfile.dev -t prux.dev . && docker build -f Dockerfile.built -t prux-build . && docker build -f Dockerfile.install -t prux-bin . && docker build -f Dockerfile.run -t prux-run .
 
 
 Start many Instance 
+2)  docker container run --name prux-docker1 prux-run
 
-docker container run --name prux-docker1 prux-run
+
+Next steps for that REPO is -->  Read here    https://github.com/BITRY/PRUX-Wallet/blob/master/doc/tor.md    
+and help to add hidden tor service and  -externalip=  in your prux config and stream your backup nodes to PRUX network please ! 
