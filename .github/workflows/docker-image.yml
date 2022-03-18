@@ -1,0 +1,18 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build -f Dockerfile.dev -t prux.dev . && docker build -f Dockerfile.built -t prux-build . && docker build -f Dockerfile.install -t prux-bin . && docker build -f Dockerfile.run -t prux-run .
