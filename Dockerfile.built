@@ -1,0 +1,2 @@
+FROM prux.dev:latest
+RUN git clone https://github.com/BITRY/PRUX-Wallet --branch v2.0.1 --single-branch

@@ -1,0 +1,12 @@
+FROM prux-build:latest
+RUN (cd PRUX-Wallet  && ./autogen.sh && \
+                      ./configure --disable-tests \
+                      --disable-bench --disable-static  \
+                      --without-gui --disable-zmq \ 
+                      --with-incompatible-bdb \
+                      CFLAGS='-w' CXXFLAGS='-w' && \
+                      make -j 7 && \
+                      strip src/pruxd && \
+                      strip src/prux-cli && \
+                      strip src/prux-tx && \
+                      make install )

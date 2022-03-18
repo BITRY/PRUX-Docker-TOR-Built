@@ -1,0 +1,13 @@
+FIRST TIME BUILD
+
+NEED before runnning docker on your os. 
+Attention the PRUX blockchanin need actaully after fullsync 17GB ! 
+
+BUILD DOCKER WITH follow commands 
+
+docker build -f Dockerfile.dev -t prux.dev . && docker build -f Dockerfile.built -t prux-build . && docker build -f Dockerfile.install -t prux-bin . && docker build -f Dockerfile.run -t prux-run .
+
+
+Start many Instance 
+
+docker container run --name prux-docker1 prux-run

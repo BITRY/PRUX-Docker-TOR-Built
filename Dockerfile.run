@@ -1,0 +1,23 @@
+FROM prux-bin
+ 
+#
+# Copy the bitcoin.conf file from
+# the build context into the container
+#
+RUN mkdir -p /root/.prux
+COPY prux.conf /root/.prux/prux.conf
+COPY commands.sh /scripts/commands.sh
+RUN ["chmod", "+x", "/scripts/commands.sh"]
+
+#
+# Expose the port for the RPC interface
+#
+EXPOSE 9595/tcp
+ 
+#
+# Start the prux server
+#
+ENTRYPOINT ["/scripts/commands.sh"]
+CMD ["-conf=/root/.prux/prux.conf", "-server=1", "-printtoconsole", "-txindex=1"]
+
+

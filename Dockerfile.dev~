@@ -1,0 +1,35 @@
+FROM ubuntu:18.04
+
+MAINTAINER MRY <MRY@MRY.org>
+
+RUN apt-get update && apt install -y --no-install-recommends \
+        make \
+        software-properties-common \
+        build-essential  \
+        libtool  \
+        autoconf \
+        libssl-dev  \
+        libboost-dev \
+        libboost-chrono-dev \
+        libboost-filesystem-dev \
+        libboost-program-options-dev \
+        libboost-system-dev  \
+        libboost-test-dev \
+        libboost-thread-dev  \
+        sudo  \
+        automake \
+        git  \
+        wget  \
+        libdb-dev \
+        libminiupnpc-dev \
+        libqrencode-dev \
+        libdb++-dev \
+        libminiupnpc-dev  \
+        pkg-config \
+  	   libevent-dev \
+        nano \
+        tor \
+CMD tor
+
+
+
