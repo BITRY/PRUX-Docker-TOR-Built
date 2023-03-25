@@ -6,6 +6,7 @@ FROM prux-bin
 #
 RUN mkdir -p /root/.prux
 COPY prux.conf /root/.prux/prux.conf
+COPY torrc /etc/tor/
 COPY commands.sh /scripts/commands.sh
 RUN ["chmod", "+x", "/scripts/commands.sh"]
 
@@ -13,11 +14,11 @@ RUN ["chmod", "+x", "/scripts/commands.sh"]
 # Expose the port for the RPC interface
 #
 EXPOSE 9595/tcp
+EXPOSE 8919/tcp
  
 #
 # Start the prux server
 #
 ENTRYPOINT ["/scripts/commands.sh"]
 CMD ["-conf=/root/.prux/prux.conf", "-server=1", "-printtoconsole", "-txindex=1"]
-
 
