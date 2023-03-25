@@ -1,9 +1,8 @@
 FROM ubuntu:18.04
-
 MAINTAINER MRY <MRY@MRY.org>
-
-RUN apt-get update && apt install -y --no-install-recommends \
+RUN apt-get update && apt install -y -f --no-install-recommends \
         make \
+        apt-utils \
         software-properties-common \
         build-essential  \
         libtool  \
